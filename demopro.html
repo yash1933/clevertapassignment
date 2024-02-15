@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<style>
+    .div{
+        width: 100px;
+        height: 50px;
+        align-items: center;
+        display: flex;
+        margin-left: 440px;
+        margin-top: 200px;
+        align-content: center;
+        background-color: blanchedalmond ;
+        
+    }
+</style>
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <script type="text/javascript">
+        var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+    // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+   clevertap.account.push({"id": "TEST-RK6-K79-7W7Z"});
+   clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+   clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+    (function () {
+            var wzrk = document.createElement('script');
+            wzrk.type = 'text/javascript';
+            wzrk.async = true;
+            wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';        
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wzrk, s);
+     })();
+    // clevertap.init('TEST-RK6-K79-7W7Z', 'REGION', 'TARGET_DOMAIN') // Replace with values applicable to you
+    // clevertap.setLogLevel(2)
+     clevertap.event.push("Product viewed", {
+    "Product id": 1,
+    "Product name": "Clevertap",
+    "Name": "Yash Patil",
+    "Email": "yash.patil22@spit.ac.in",
+  //  "Date": new Date()
+});
+clevertap.notifications.push({
+    "titleText":popupTitleText,
+    "bodyText":popupBodyText,
+    "okButtonText":okButtonText,
+    "rejectButtonText":rejectButtonText,
+    "okButtonColor":okButtonColorInHex});
+</script>
+    <meta charset="utf-8">
+    <title>
+        Clevertap Project
+    </title>
+</head>
+<body>
+<button class="div" type="button">Event</button>
+
+</body>
+</html>
